@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            /* Establecer el fondo a azul cielo */
+            background: skyblue;
+            /* Centrar el contenido de la página */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            /* Establecer el color del texto a mostaza y el tamaño a 48px */
+            color: #FFDB58;
+            font-size: 48px;
+        }
+
+        #message {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="button" onclick="showMessage()">Por favor Dame click</button>
+    <p id="message"></p>
+
+    <script>
+        var text = `Buenos días, mi amor, Espero que hayas tenido una semana llena de amor. Que este viernes sea el comienzo de un fin de semana maravilloso, Lleno de aventuras, risas y momentos inolvidables.
+
+        Que cada día juntos sea una nueva aventura, Llena de amor, pasión y felicidad. Que este fin de semana sea el comienzo de algo hermoso, Un nuevo capítulo en nuestra historia de amor.
+
+        Te amo más allá de las palabras, Y espero que este poema te haga sonreír. Que tengas un excelente día, mi amor, Y que este fin de semana sea el mejor de todos.
+
+        ¡Que tengas un buen día! 😊`;
+
+        var i = 0;
+        function showMessage() {
+            if (i < text.length) {
+                document.getElementById('message').style.display = 'block';
+                document.getElementById('message').innerHTML += text.charAt(i);
+                i++;
+                setTimeout(showMessage, 50);
+            } else {
+                document.getElementById('button').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
